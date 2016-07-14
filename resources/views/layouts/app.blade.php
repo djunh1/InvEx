@@ -6,7 +6,15 @@
     </head>
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
         <div class="page-wrapper">
-            @yield('content')
+            @include('layouts.header')
+            <div class="page-container">
+                <div class="'page-container">
+                  @include('layouts.sidebar')
+                  @yield('content')
+                  @include('layouts.quick-sidebar')
+                </div>
+            @include('layouts.footer')
+            </div>
         <div>
         @include('layouts.scripts')
     </body>

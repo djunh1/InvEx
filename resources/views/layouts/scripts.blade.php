@@ -47,6 +47,12 @@
 
 {!! Html::script('/assets/pages/scripts/dashboard.min.js') !!}
 
+<!-- Login Page Scripts -->
+{!! Html::script('/assets/pages/scripts/login.min.js') !!}
+{!! Html::script('/assets/global/plugins/jquery-validation/js/jquery.validate.min.js') !!}
+{!! Html::script('/assets/global/plugins/jquery-validation/js/additional-methods.min.js') !!}
+{!! Html::script('/assets/global/plugins/select2/js/select2.full.min.js') !!}
+
 <!-- Layout Scripts -->
 
 {!! Html::script('/assets/layouts/layout/scripts/layout.min.js') !!}

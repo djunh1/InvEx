@@ -24,6 +24,13 @@
 {!! Html::style('/assets/global/css/components.min.css') !!}
 {!! Html::style('/assets/global/css/plugins.min.css') !!}
 
+<!-- STYLE SHEET LOGIN -->
+
+{!! Html::style('/assets/pages/css/login-3.min.css') !!}
+{!! Html::style('/assets/global/plugins/select2/css/select2.min.css') !!}
+{!! Html::style('/assets/global/plugins/select2/css/select2-bootstrap.min.css') !!}
+
+
 <!-- STYLE SHEETS THEME LAYOUT -->
 
 {!! Html::style('/assets/layouts/layout/css/custom.css') !!}

@@ -310,9 +310,13 @@
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle" src="../assets/layouts/layout/img/avatar3_small.jpg" />
-                        <span class="username username-hide-on-mobile"> Nick </span>
-                        <i class="fa fa-angle-down"></i>
+                        @if(Auth::check())
+                             <img alt="User picture" class="img-circle"
+                             src="{{ Auth::user()->avatar }}" height="40" width="40" />
+                        <span class="username username-hide-on-mobile"> {{ Auth::user() ->name }} </span>
+                            <i class="fa fa-angle-down"></i>
+                        @endif
+
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
@@ -341,7 +345,8 @@
                                 <i class="icon-lock"></i> Lock Screen </a>
                         </li>
                         <li>
-                            <a href="page_user_login_1.html">
+
+                            <a href="auth/logout">
                                 <i class="icon-key"></i> Log Out </a>
                         </li>
                     </ul>

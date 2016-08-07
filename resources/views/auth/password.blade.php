@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-6 col-md-offset-3">
 			<div class="panel panel-default">
 				<div class="panel-heading">Reset Password</div>
 				<div class="panel-body">
@@ -24,9 +24,29 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<!-- BEGIN FORGOT PASSWORD FORM -->
+						<form class="forget-form" role="form" method="POST" action="{{ url('/password/email') }}">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							<h3>Forget Password ?</h3>
+							<p> Enter your e-mail address below to reset your password. </p>
+							<div class="form-group">
+								<div class="input-icon">
+									<i class="fa fa-envelope"></i>
+									<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								</div>
+							</div>
+							<div class="form-actions">
+								<a type="button" id="back-btn" class="btn grey-salsa btn-outline"
+								   href="{{ url('/auth/login') }}"> Back </a>
+								<button type="submit" class="btn green pull-right"> Send Password Reset Link </button>
+							</div>
+						</form>
+						<!-- END FORGOT PASSWORD FORM -->
 
+
+					<!--form class="forget-form" role="form" method="POST" action="{{ url('/password/email') }}">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<h3>Forget Password ?</h3>
 						<div class="form-group">
 							<label class="col-md-4 control-label">E-Mail Address</label>
 							<div class="col-md-6">
@@ -41,7 +61,9 @@
 								</button>
 							</div>
 						</div>
-					</form>
+					</form-->
+
+
 				</div>
 			</div>
 		</div>

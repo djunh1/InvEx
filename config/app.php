@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
 
+
 		/*
 		 * Application Service Providers...
 		 */
@@ -147,7 +148,7 @@ return [
 		'App\Providers\RouteServiceProvider',
 
         /* Custom Service Providers */
-
+        'Laravel\Socialite\SocialiteServiceProvider',
 
 	],
 
@@ -198,6 +199,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
         'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 
 	],
 

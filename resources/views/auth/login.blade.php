@@ -50,16 +50,16 @@
 								<h4>Or login with</h4>
 								<ul class="social-icons">
 									<li>
-										<a class="facebook" data-original-title="facebook" href="javascript:;"> </a>
+										<a class="facebook" data-original-title="facebook" href="{{ url('/auth/facebook') }}"> </a>
 									</li>
 									<li>
-										<a class="twitter" data-original-title="Twitter" href="javascript:;"> </a>
+										<a class="twitter" data-original-title="Twitter" href="{{ url('/auth/twitter') }}"> </a>
 									</li>
 									<li>
-										<a class="googleplus" data-original-title="Goole Plus" href="javascript:;"> </a>
+										<a class="googleplus" data-original-title="Goole Plus" href="{{ url('/auth/google') }}"> </a>
 									</li>
 									<li>
-										<a class="linkedin" data-original-title="Linkedin" href="javascript:;"> </a>
+										<a class="github" data-original-title="Linkedin" href="javascript:;"> </a>
 									</li>
 								</ul>
 							</div>
@@ -70,7 +70,7 @@
 							</div>
 							<div class="create-account">
 								<p> Don't have an account yet ?&nbsp;
-									<a href="javascript:;" id="register-btn"> Create an account </a>
+									<a href="{{ url('/auth/register') }}" id="register-btn"> Create an account </a>
 								</p>
 							</div>
 						</form>

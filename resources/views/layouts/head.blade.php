@@ -30,9 +30,15 @@
 {!! Html::style('/assets/global/plugins/select2/css/select2.min.css') !!}
 {!! Html::style('/assets/global/plugins/select2/css/select2-bootstrap.min.css') !!}
 
+<!-- STYLE SHEET LOGIN -->
+{!! Html::style('/assets/pages/css/search.min.css') !!}
 
 <!-- STYLE SHEETS THEME LAYOUT -->
 
 {!! Html::style('/assets/layouts/layout/css/custom.css') !!}
 {!! Html::style('/assets/layouts/layout/css/darkblue.css') !!}
 {!! Html::style('/assets/layouts/layout/css/layout.css') !!}
+
+<!-- STYLE SHEETS ALL, CUSTOMIZE CSS HERE -->
+
+{!! Html::style('/assets/pages/css/custom-pages-all.css') !!}

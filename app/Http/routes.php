@@ -11,9 +11,22 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+
+//Route::get('home', 'HomeController@index');
+Route::get('home',  array('as' => 'home', 'uses' => 'HomeController@index'));
+
+/* Social media login  */
+Route::get('/auth/facebook', 'FacebookAuthController@redirectToProvider');
+Route::get('/auth/facebook/callback', 'FacebookAuthController@handleProviderCallback');
+Route::get('auth/twitter', 'TwitterAuthController@redirectToProvider');
+Route::get('auth/twitter/callback', 'TwitterAuthController@handleProviderCallback');
+Route::get('auth/google','GoogleAuthController@redirectToProvider');
+Route::get('auth/google/callback', 'GoogleAuthController@handleProviderCallback');
+
+/* Search */
+Route::get('/stocks/', 'StockSearchController@index');
+Route::post('/stocks/search', 'StockSearchController@searchResults');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

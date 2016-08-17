@@ -28,6 +28,8 @@ Route::get('auth/google/callback', 'GoogleAuthController@handleProviderCallback'
 Route::get('/stocks/', 'StockSearchController@index');
 Route::post('/stocks/search', 'StockSearchController@searchResults');
 
+/* Stock Results */
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

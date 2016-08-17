@@ -150,6 +150,7 @@ return [
         /* Custom Service Providers */
         'Laravel\Socialite\SocialiteServiceProvider',
 
+
 	],
 
 	/*

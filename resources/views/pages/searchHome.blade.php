@@ -25,7 +25,7 @@
         <div class="search-page search-content-1">
             <div class="search-bar ">
                 <div class="row">
-                    <form role="form" form method="POST" action="{{ url('/stocks/search') }}">
+                    <form role="form"  method="POST" action="{{ url('/stocks/search') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="row">
                             <div class="col-md-6">
@@ -43,15 +43,6 @@
                                 <span class="search-desc clearfix"> Search through our database of over 5000 stocks listed on the
                                 S&P 500, and the NASDAQ Index.  </span>
                             </div>
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
                         </div>
                     </form>
 
@@ -62,8 +53,14 @@
 
     <!-- SEARCH RESULT -->
         <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                @if ($message)
+                    <span class="label label-danger">{{ $message }}</span>
+                @endif
+            </div>
+
             @if ($symbol)
-            <div class="col-md-4 ">
+            <div class="col-md-12 ">
                 <!-- BEGIN Portlet PORTLET-->
                 <div class="portlet box blue-hoki">
                     <div class="portlet-title">
@@ -71,18 +68,13 @@
                             <i class="fa fa-gift"></i>{{ $symbol }} </div>
                         <div class="actions">
                             <a href="javascript:;" class="btn btn-default btn-sm">
-                                <i class="fa fa-pencil"></i> Edit </a>
-                            <a href="javascript:;" class="btn btn-default btn-sm">
-                                <i class="fa fa-plus"></i> Add </a>
+                                <i class="fa fa-home"></i> Research Stock </a>
                         </div>
                     </div>
                     <div class="portlet-body">
                         <div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
-                            <strong>Scroll is hidden</strong>
-                            <br/> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                            eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-                            sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis
-                            mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </div>
+                            <strong>{{ $name }}</strong>
+                            <br/> {{ $about }}</div>
                     </div>
                 </div>
                 <!-- END Portlet PORTLET-->

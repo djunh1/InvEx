@@ -9,7 +9,7 @@
             @include('layouts.header')
             <div class="page-container">
                 <div class="'page-container">
-                  @include('layouts.sidebar')
+                  @yield('sideBar')
                   @yield('content')
                   @include('layouts.quick-sidebar')
                 </div>

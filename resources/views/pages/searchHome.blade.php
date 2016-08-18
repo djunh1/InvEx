@@ -4,6 +4,10 @@
     <title>Search The Investing Exchange</title>
 @stop
 
+@section('sideBar')
+    @include('sidebar.sidebarHome')
+@stop
+
 @section('content')
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
@@ -13,7 +17,7 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="/home">Home</a>
                     <i class="fa fa-circle"></i>
                 </li>
                 <li>
@@ -67,12 +71,13 @@
                         <div class="caption">
                             <i class="fa fa-gift"></i>{{ $symbol }} </div>
                         <div class="actions">
-                            <a href="javascript:;" class="btn btn-default btn-sm">
-                                <i class="fa fa-home"></i> Research Stock </a>
+                            <a href="/stocks/{{ $id }}" class="btn btn-default btn-sm">
+                                <i class="fa fa-home"></i> Research {{ $symbol }} </a>
                         </div>
                     </div>
                     <div class="portlet-body">
-                        <div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
+                        <div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow"
+                             data-handle-color="#a1b2bd">
                             <strong>{{ $name }}</strong>
                             <br/> {{ $about }}</div>
                     </div>

@@ -30,6 +30,8 @@ Route::post('/stocks/search', 'StockSearchController@searchResults');
 
 /* Stock Results */
 
+Route::get('/stocks/{id}', 'StockDataController@basicResults');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

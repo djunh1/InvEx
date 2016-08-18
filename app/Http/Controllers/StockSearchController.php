@@ -15,7 +15,7 @@ class StockSearchController extends Controller {
 
 	public function index()
 	{
-	    $symbol = $message ='';
+	    $symbol = $message = $id ='';
         return view('pages.searchHome',[
             'symbol' => $symbol,
             'message' => '',
@@ -32,12 +32,13 @@ class StockSearchController extends Controller {
             $symbol = Symbol::where('ticker', [$stockSearch,])->firstOrFail();
         } catch(ModelNotFoundException $ex)
         {
-            $symbol = $name = $about = '';
+            $symbol = $name = $about = $id= '';
             $message = 'We were unable to find " '.$stockSearch.' ".  Please search again.';
             return view('pages.searchHome', [
                 'symbol' => $symbol,
                 'name' => $name,
                 'message' => $message,
+                'id' => $id,
             ]);
         }
 
@@ -47,12 +48,14 @@ class StockSearchController extends Controller {
             'name' => $symbol->name,
             'message' => '',
             'about' => $stockInfo,
+            'id' => $symbol->id,
         ]);
 
 	}
 
     private function scrapeStockInfo($stockTicker)
     {
+        // TO DO - Possible bugs when searching stocks that use different URLs
         $client = new Client();
         $baseUrl = 'https://www.google.com/finance?q=';
         $urlEndpoint = '&ei=-6qzV9HYO83BeJnlpaAC';

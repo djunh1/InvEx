@@ -4,6 +4,10 @@
 	<title>The Investing Exchange</title>
 @stop
 
+@section('sideBar')
+    @include('sidebar.sidebarHome')
+@stop
+
 @section('content')
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">

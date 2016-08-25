@@ -58,4 +58,11 @@
 {!! Html::script('/assets/layouts/layout/scripts/layout.min.js') !!}
 {!! Html::script('/assets/layouts/global/scripts/quick-sidebar.min.js') !!}
 
+<!-- chart Scripts Unsure if these load, use CDN for now-->
+
+{!! Html::script('/assets/global/plugins/echarts/echarts.js') !!}
+{!! Html::script('/assets/pages/scripts/charts-echarts.min.js') !!}
+<!-- Fallback -->
+
+
 

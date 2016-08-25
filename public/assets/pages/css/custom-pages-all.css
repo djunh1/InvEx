@@ -4,3 +4,61 @@
     padding: 0px 50px 20px 50px;
 }
 
+
+/*  Stock Overview Page */
+
+.stockInfo{
+    font-size: 14px;
+    color: #5F9EA0;
+}
+
+.basic-info-price{
+    font-size: 41px;
+    font-weight:100;
+}
+
+.basic-info-pcnt{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.basic-info-neutral{
+    font-size: 14px;
+    font-weight: 100;
+    color: #3333ff;
+}
+
+.basic-info-stat{
+
+    font-size: 14px;
+    font-weight: 100;
+    color: #000;
+    float: right;
+}
+
+
+
+.table>thead:first-child>tr:first-child>th{
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.table-text-right{
+    text-align: right;
+    font-weight: 100;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th{
+    border: none;
+    padding:7px;
+    line-height: 1.1;
+}
+
+.invoice table{
+    margin: 13px 0 30px 0;
+}

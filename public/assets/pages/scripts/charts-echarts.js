@@ -172,6 +172,8 @@ jQuery(document).ready(function() {
             // -- SCATTER --
             var myChart3 = ec.init(document.getElementById('echarts_scatter'));
             myChart3.setOption({
+
+
                 tooltip: {
                     trigger: 'item'
                 },

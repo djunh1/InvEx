@@ -33,6 +33,10 @@
 <!-- STYLE SHEET LOGIN -->
 {!! Html::style('/assets/pages/css/search.min.css') !!}
 
+<!-- STYLE SHEET RESULTS -->
+
+{!! Html::style('/assets/pages/css/resultsOverview.css') !!}
+
 <!-- STYLE SHEETS THEME LAYOUT -->
 
 {!! Html::style('/assets/layouts/layout/css/custom.css') !!}

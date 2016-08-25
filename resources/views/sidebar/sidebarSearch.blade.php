@@ -41,7 +41,7 @@
                 </form>
                 <!-- END RESPONSIVE QUICK SEARCH FORM -->
             </li>
-            <li class="nav-item ">
+            <li class="nav-item open">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">The Investing Exchange</span>
@@ -83,7 +83,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="ui_colors.html" class="nav-link active">
+                        <a href="/stocks/{{$id}}" class="nav-link active">
                             <span class="title">Overview</span>
                         </a>
                     </li>

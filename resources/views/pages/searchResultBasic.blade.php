@@ -78,7 +78,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Shares outstanding</td>
-                                                                        <td class="table-text-right">{{$mktCap}}</td>
+                                                                        <td class="table-text-right">{{$sharesOutstg}} Mil.</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Enterprise Value</td>

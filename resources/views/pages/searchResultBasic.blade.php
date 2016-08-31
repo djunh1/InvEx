@@ -77,21 +77,30 @@
                                                                         <td class="table-text-right">{{$mktCap}}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td>Shares outstanding</td>
+                                                                        <td>Shares Outst.</td>
                                                                         <td class="table-text-right">{{$sharesOutstg}} Mil.</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Enterprise Value</td>
-                                                                        <td class="table-text-right">{{$mktCap}}</td>
+                                                                        <td class="table-text-right">{{$ev}} Bil.</td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>P/B Value</td>
+                                                                        <td class="table-text-right">{{$pb}}</td>
                                                                     </tr>
 
                                                                     <tr>
                                                                         <td>Net-Net</td>
-                                                                        <td class="table-text-right">{{$eps}}$ /share</td>
+                                                                        <td class="table-text-right">${{$netNet}} /share</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>NCAV</td>
-                                                                        <td class="table-text-right">{{$div}}$ /share</td>
+                                                                        <td class="table-text-right">${{$ncav}} /share</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>FCF Yield</td>
+                                                                        <td class="table-text-right">${{$fcf}} /share</td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -108,14 +117,14 @@
                                                         </tr>
                                                         <tr>
                                                             <td>EPS</td>
-                                                            <td class="table-text-right"> {{$eps}} $/share</td>
+                                                            <td class="table-text-right"> ${{$eps}}/share</td>
                                                         </tr>
                                                         <tr>
                                                             <td>P/E</td>
-                                                            <td class="table-text-right">{{$mktCap}}</td>
+                                                            <td class="table-text-right">{{$pe}}</td>
                                                         </tr>
                                                         </tbody>
-                                                    </table>
+                                                    </table><hr class="basic-stats-hr">
 
                                                     <table class="table table-hover table-stats">
                                                         <thead>
@@ -123,17 +132,18 @@
                                                         </thead>
                                                         <tbody>
                                                         <tr>
+                                                            <td>EV/Rev.</td>
+                                                            <td class="table-text-right">{{$evRev}}</td>
+                                                        </tr>
+                                                        <tr>
                                                             <td>EV/EBIT</td>
-                                                            <td class="table-text-right">{{$EBITDA}}</td>
+                                                            <td class="table-text-right">{{$evEbit}}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>EV/EBITDA</td>
-                                                            <td class="table-text-right"> {{$eps}} $/share</td>
+                                                            <td class="table-text-right"> {{$evEbitda}}</td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>FCF Yield</td>
-                                                            <td class="table-text-right">{{$mktCap}}</td>
-                                                        </tr>
+
                                                         </tbody>
                                                     </table>
 

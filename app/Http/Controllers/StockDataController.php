@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use DB;
 use App\Symbol as Symbol;
+use PhpParser\Node\Expr\Array_;
 use Scheb\YahooFinanceApi;
 
 class StockDataController extends Controller {
@@ -68,6 +69,13 @@ class StockDataController extends Controller {
         $evEbit = $this->getEvEbit($symbol->id, $enterpriseValue);
         $evEbitda = $this->getEvEbitda($EBITDA, $enterpriseValue);
 
+        //Chart data - Dates and O,H,L,C
+
+        $rawPriceData= $this->getStockPriceData($symbol->ticker, $client);
+        $dates = $this->getDatesArray($rawPriceData);
+        $prices = $this->getPriceArray($rawPriceData);
+
+
         return view('pages.searchResultBasic', [
             'id' => $symbol->id,
             'name' => $symbol->ticker,
@@ -94,6 +102,8 @@ class StockDataController extends Controller {
             'evRev' => $evRev,
             'evEbit' => $evEbit,
             'evEbitda' =>$evEbitda,
+            'dateData'=> json_encode($dates),
+            'priceData'=> json_encode($prices),
         ]);
     }
 
@@ -203,7 +213,7 @@ class StockDataController extends Controller {
 
     private function getEvEbit($id, $ev)
     {
-        //Need to convert 
+        //Need to convert
         $ebit= $this->getStatementData($id,$this->EBIT);
         $evEbit = 1000*$ev/$ebit;
         return round($evEbit,2);
@@ -225,6 +235,35 @@ class StockDataController extends Controller {
         return $mktCap;
     }
 
+    private function getStockPriceData($stockTicker, $client)
+    {
+        $startDate = (new \DateTime())->modify('-364 day');
+        $now= (new \DateTime())->modify('-1 day');
 
+        $data = $client->getHistoricalData($stockTicker, $startDate, $now);
+        return $data;
+    }
+
+    private function getDatesArray($data)
+    {
+        $dateArray = array();
+
+        for ($i=0; $i<count($data['query']['results']['quote']); $i++){
+            $dateArray[$i] = $data['query']['results']['quote'][$i]['Date'];
+        }
+        return $dateArray;
+    }
+
+    private function getPriceArray($data)
+    {
+        $priceArray = array();
+        for ($i=0; $i<count($data['query']['results']['quote']); $i++){
+            $priceArray[$i][0] = round((float)$data['query']['results']['quote'][$i]['Open'],2);
+            $priceArray[$i][1] = round((float)$data['query']['results']['quote'][$i]['High'],2);
+            $priceArray[$i][2] = round((float)$data['query']['results']['quote'][$i]['Low'],2);
+            $priceArray[$i][3] = round((float)$data['query']['results']['quote'][$i]['Close'],2);
+        }
+        return $priceArray;
+    }
 
 }
